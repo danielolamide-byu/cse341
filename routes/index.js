@@ -5,7 +5,7 @@ router.get('/', (req, res) => {
     res.send('Hello World Right Now!!');
 });
 
-router.use('/contact', require('./contact'));
+router.use('/contacts', require('./contacts'));
 
 module.exports = router;
 
