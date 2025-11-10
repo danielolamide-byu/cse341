@@ -23,3 +23,21 @@ content-type: application/json
     "birthday": "11 March, 1980"
 }
 
+### Update Contact
+
+PUT http://localhost:3000/contacts/690c6daf45ab0620eaba7587 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Max",
+    "lastName": "Planck",
+    "email": "maxplanck@gmail.com",
+    "favoriteColor": "yellow",
+    "birthday": "23 April, 1858"
+}
+
+
+### Delete Contact
+
+DELETE http://localhost:3000/contacts/690c6eb145ab0620eaba7588
+
