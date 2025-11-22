@@ -6,20 +6,30 @@ const ObjectId = require('mongodb').ObjectId;
 
 
 const getAll = async (req, res) => {
-    const result = await mongodb.getDatabase().db('people').collection('contacts').find();
+    try {
+        const result = await mongodb.getDatabase().db('people').collection('contacts').find();
     result.toArray().then((users) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(users);
-    });
+    })
+    }
+    catch (error) {
+        console.log("Error fetching contacts.", error);
+    }
 };
 
 const getSingle = async (req, res) => {
-    const userId = new ObjectId(req.params.id);
+    try {
+         const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db('people').collection('contacts').find({ _id: userId });
     result.toArray().then((users) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(users[0]);
     })
+    }
+    catch (error) {
+        console.log("Error fetching contact.", error)
+    }
 };
 
 const createContact = async (req, res) => {

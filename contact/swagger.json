@@ -31,6 +31,7 @@
         }
       }
     },
+    
     "/contacts/": {
       "get": {
         "description": "",
@@ -43,6 +44,7 @@
           }
         }
       },
+
       "post": {
         "description": "",
         "parameters": [
@@ -81,6 +83,7 @@
         }
       }
     },
+
     "/contacts/{id}": {
       "get": {
         "description": "",
@@ -101,6 +104,7 @@
           }
         }
       },
+
       "put": {
         "description": "",
         "parameters": [
@@ -144,6 +148,7 @@
           }
         }
       },
+      
       "delete": {
         "description": "",
         "parameters": [
